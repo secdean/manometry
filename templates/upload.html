@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<title>Upload</title>
+	<link rel="stylesheet" href="static/css/style_man.css">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+
+
+<div id="header">
+    <h2> Detect colonic motor patterns  </h2>
+</div>
+
+
+
+
+<div id="top-form">
+<h2>Select files to upload</h2>
+
+
+
+<form method="post" action="#" enctype="multipart/form-data">
+    <dl>
+    	<p>
+
+    		
+			<input type="file" name="files[]" multiple="true" autocomplete="off" required>
+		</p>
+		<p>	
+
+			<input type="submit" value="Upload">
+    	</p>
+    </dl>
+
+</form>
+
+
+<p align="left"><h3>Run inference &nbsp
+				<a href=process ><button class=green >4-label inference</button></a>
+				<a href=process_2 ><button class=green >2-label inference</button></a>
+</h3>
+</p>
+
+
+<p align="left"><h3>View existing results &nbsp
+				<a href=results_2 ><button class=green >4-label results</button></a>
+				<a href=results_3 ><button class=green >2-label results</button></a>
+</h3>
+</p>
+
+
+
+ 			<p align="left">
+			{% with messages = get_flashed_messages() %}
+			  {% if messages %}
+				
+				{% for message in messages %}
+				{{ message }}
+				{% endfor %}
+			
+			  {% endif %}
+			{% endwith %}
+			</p>
+
+
+</div>
+</html> 
+
+
+
+
+
+

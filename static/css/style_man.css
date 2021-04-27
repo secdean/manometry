@@ -1,0 +1,164 @@
+/************************************/
+/*             GLOBALS              */
+/************************************/
+
+/************************************/
+/*             HEADER               */
+/************************************/
+
+
+#header {
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 60px;
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    background-color: #111;
+
+}
+
+/************************************/
+/*             GLOBALS              */
+/************************************/
+
+html, body {
+
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	/*font-family: 'Roboto', sans-serif;*/
+	/*font-family: 'Roboto Mono';*/
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #111;
+	text-align: center;
+	min-width: 1200px;
+	min-height: 800px;
+
+}
+
+hr {
+
+    border: solid #666666 1px;
+    height:1px;
+}
+
+
+
+/************************************/
+/*            CONTENT               */
+/************************************/
+
+#content {
+
+	position: absolute;
+    top: 40px;
+    bottom: 25px;
+    width: 100%;
+    background-color: white;
+	overflow: hidden;
+
+}
+
+
+/************************************/
+/*              INPUT               */
+/************************************/
+#top-form {
+
+	position: absolute;
+    top: 60px;
+	left: 0px;
+    height: 80px;
+    width: 100%;
+    text-align: left;
+    background-color: white;
+	padding: 10px 50px 20px;
+
+}
+
+#middle-form {
+
+	position: absolute;
+    top: 160px;
+	left: 0px;
+    height: 80px;
+    width: 100%;
+    text-align: left;
+    background-color: white;
+	padding: 10px 10px 20px;
+
+}
+
+
+
+
+
+/************************************/
+/*            CONTENT               */
+/************************************/
+
+
+#plot-container {
+
+	position: absolute;
+	top: 120px;
+	left: 300px;
+	right: 40%;
+	bottom: 45px;
+	height: 8px;
+    width: 10%;
+	background-color: white;
+
+}
+
+
+#stats-container {
+
+	position: absolute;
+	top: 120px;
+	right: 0px;
+	width: 38%;
+	bottom: 45px;
+	margin: 25px;
+	color: #111;
+	text-align: left;
+	column-count: 2;
+	column-fill: auto;
+	break-inside: avoid;
+	font-size: 12px;
+	background-color: white;
+	display: inline-block;
+}
+
+
+
+.item1 { grid-area: menu; }
+.item2 { grid-area: main; }
+.item3 { grid-area: right; }
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'menu main main  right right right';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+  position: absolute;
+  top: 220px;
+  width: 95%;
+
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+}
+

@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<title>Results</title>
+	<link rel="stylesheet" href="/static/css/style_man_test.css">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+
+
+<body>
+  <div class="grid-wrapper">
+    <header>
+     <h2> Detect colonic motor patterns  </h2>
+    </header>
+
+
+<!-- aside -->
+	    <aside>
+	      <h2>Results</h2>
+	      <h3> 4 labels (HAPC, 'r-CPMP', 'a-CPMP' </h3>
+	      <h3> and 'CSPW') </h3>
+	      <p><p align="left"><a href=\ ><button class=green >Home</button></a></p></p>
+			
+			<ul style="list-style-type:none">
+
+			    {% for file in files %}
+
+<!-- just knocks off last 4 parts of image filename.ext 
+			    <li>
+			        <a href="/results_2/{{ file }}"> {{file[:-4]}}</a>  
+			    </li>
+ -->
+			    <li>
+			        <a href="/results_2/{{ file }}"> {{file.split('.', 1)[0]}}</a>
+			    </li>
+
+
+			    {% endfor %}
+			    {% print(file) %}
+			</ul>
+	    </aside>
+
+<!--  END aside -->
+
+
+	    <article>
+<!--  	      <h1>{{fname[:-4]}}</h1> -->
+			<h1>{{fname.split('.', 1)[0]}}</h1>
+
+
+
+
+		
+
+
+	      <div class="flex-wrapper">
+	        <span class="image">
+	        	<image src = "{{url_for('static',  filename = 'inference/' + fname)}}" width="800" height="550">
+	        </span>
+	        <span class="image">
+	        	<table class="centered thick-border" style="display: inline-block; margin-right: -35px;">
+							<tr>
+								<th>Number of events</th>
+							</tr>
+							<tr>
+								<th>Simple frequency (per min)</th>
+							</tr>
+							<tr>
+								<th>Median frequency (per min)</th>
+							</tr>
+							<tr>
+								<th>Average duration (s)</th>
+							</tr>		
+							<tr>
+								<th>Maximum duration (s)</th>
+							</tr>
+							<tr>
+								<th>Minimum duration (s)</th>
+							</tr>
+							<tr>
+								<th>Average extent (cm)</th>
+							</tr>
+							<tr>
+								<th>Maximum extent (cm)</th>
+							</tr>
+							<tr>
+								<th>Minimum extent (cm)</th>
+							</tr>
+							<tr>
+								<th>Average speed (cm/s)</th>
+							</tr>
+							<tr>
+								<th>Maximum speed (cm/s)</th>
+							</tr>
+							<tr>
+								<th>Minimum speed (cm/s)</th>
+							</tr>
+							
+
+				</table>
+
+
+				{% for k, v in ind_events.items() %}
+				<table class="centered thin-border" style="display: inline-block; margin-right: -30px;  ">
+
+
+							<tr>
+								<th></th>
+								<th>{% print(k) %} </th>
+							</tr>
+
+				
+					{% for k2, v2 in v.items() %}
+				   <tr>
+				        <th>  </th>
+				        <td> {{ v2 }} </td>
+
+				   </tr>
+				   {% endfor %}
+				{% endfor %}
+				</table>
+	        </span>
+	      </div>
+
+
+
+
+	    </article>
+
+
+  </div>
+</body>
+
+
+
+</html> 
